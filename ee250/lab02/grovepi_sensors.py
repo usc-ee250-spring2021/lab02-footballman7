@@ -51,9 +51,9 @@ if __name__ == '__main__':
         x = grovepi.ultrasonicRead(ultraRange) # bottom
         y = grovepi.analogRead(pmeter) # top
         volt = round((float)(y) * adc_Ref / 1023, 2)
-        if x < volt:
-        	grove_rgb_lcd.setText_norefresh(str(volt) + "cm    \n" + str(x) + "cm")
         if x >= volt:
+        	grove_rgb_lcd.setText_norefresh(str(volt) + "cm    \n" + str(x) + "cm")
+        if x < volt:
         	grove_rgb_lcd.setText_norefresh(str(volt) + "cm" +  "OBJ PRES  \n" + str(x) + "cm")
 
 
