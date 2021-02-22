@@ -62,22 +62,11 @@ if __name__ == '__main__':
         	#x = grovepi.ultrasonicRead(PORT) # bottom
         	#y = grovepi.analogRead(pmeter) 
         if x >= y:
-        	if y >= 0 and y < 10:
-        		difftext = str(y) + "cm             " + "\n" + str(x) + "cm"
-        		grove_rgb_lcd.setText_norefresh(difftext)
-        		grove_rgb_lcd.setRGB(0,255,0)
-        	elif y >= 10 and y < 100:
-        		difftext = str(y) + "cm            " + "\n" + str(x) + "cm"
-        		grove_rgb_lcd.setText_norefresh(difftext)
-        		grove_rgb_lcd.setRGB(0,255,0)
-        	elif y >= 100 and y < 1000:
-        		difftext = str(y) + "cm           " + "\n" + str(x) + "cm"
-        		grove_rgb_lcd.setText_norefresh(difftext)
-        		grove_rgb_lcd.setRGB(0,255,0)
-        	elif y >= 1000 and y <= 1023:
-        		difftext = str(y) + "cm          " + "\n" + str(x) + "cm"
-        		grove_rgb_lcd.setText_norefresh(difftext)
-        		grove_rgb_lcd.setRGB(0,255,0)
+        	
+        	difftext = str(y) + "cm         " + "\n" + str(x) + "cm"
+        	grove_rgb_lcd.setText_norefresh(difftext)
+        	grove_rgb_lcd.setRGB(0,255,0)
+        
         	#x = grovepi.ultrasonicRead(PORT) # bottom
             #y = grovepi.analogRead(pmeter) 
 
