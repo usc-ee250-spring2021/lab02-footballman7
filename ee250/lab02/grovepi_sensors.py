@@ -56,12 +56,14 @@ if __name__ == '__main__':
         #if x >= y:
         	#grove_rgb_lcd.setText_norefresh(str(y) + "cm    \n" + str(x) + "cm")
         if x < y:
-        	grove_rgb_lcd.setText_norefresh(str(y) + "cm OBJ PRES" + "\n"+ str(x) + "cm ")
+        	text = str(y) + "cm OBJ PRES" + "\n" + str(x) + "cm"
+        	grove_rgb_lcd.setText_norefresh(text)
         	grove_rgb_lcd.setRGB(255,0,0)
         	#x = grovepi.ultrasonicRead(PORT) # bottom
         	#y = grovepi.analogRead(pmeter) 
         if x >= y:
-        	grove_rgb_lcd.setText_norefresh(str(y) + "cm          " + "\n"  + str(x) + "cm ")
+        	difftext = str(y) + "cm    " + "\n" + str(x) + "cm"
+        	grove_rgb_lcd.setText_norefresh(difftext)
         	grove_rgb_lcd.setRGB(0,255,0)
         	#x = grovepi.ultrasonicRead(PORT) # bottom
             #y = grovepi.analogRead(pmeter) 
