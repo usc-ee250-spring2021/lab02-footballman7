@@ -59,5 +59,5 @@ if __name__ == '__main__':
         	grove_rgb_lcd.setText_norefresh(str(y) + "cm" + "OBJ PRES  \n" + str(x) + "cm")
 
         bright = 255
-        grovepi.analogWrite(lcd,brightness)
+        grovepi.analogWrite(lcd,bright)
         #print(grovepi.ultrasonicRead(PORT)) #PORT
