@@ -28,6 +28,7 @@ import string
 
 pmeter = 0
 grovepi.pinMode(pmeter,"INPUT")
+grovepi.pinMode(led,"OUTPUT")
 
 ultraRange = 4
 
@@ -53,8 +54,9 @@ if __name__ == '__main__':
         #volt = round((float)(y) * adc_Ref / 1023, 2)
         if x >= y:
         	grove_rgb_lcd.setText_norefresh(str(y) + "cm    \n" + str(x) + "cm")
-        if x < volt:
+        if x < y:
         	grove_rgb_lcd.setText_norefresh(str(y) + "cm" + "OBJ PRES  \n" + str(x) + "cm")
 
-
+        bright = 255
+        grovepi.analogWrite(led,brightness)
         #print(grovepi.ultrasonicRead(PORT)) #PORT
