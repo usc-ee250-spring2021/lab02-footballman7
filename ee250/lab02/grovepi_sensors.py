@@ -58,7 +58,7 @@ if __name__ == '__main__':
         if x < y:
         	grove_rgb_lcd.setText_norefresh(str(y) + "cm" + " OBJ PRES  \n" + str(x) + "cm")
         else:
-        	grove_rgb_lcd.setText_norefresh(str(y) + "cm     \n" + str(x) + "cm")
+        	grove_rgb_lcd.setText_norefresh(str(y) + "cm \n" + str(x) + "cm")
 
         bright = 255
         grovepi.analogWrite(lcd,bright)
