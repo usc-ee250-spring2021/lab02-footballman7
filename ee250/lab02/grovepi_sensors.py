@@ -61,14 +61,9 @@ if __name__ == '__main__':
         	grove_rgb_lcd.setRGB(255,0,0)
         	#x = grovepi.ultrasonicRead(PORT) # bottom
         	#y = grovepi.analogRead(pmeter) 
-        if x >= y:
+        else:
         	difftext = str(y) + "cm         " + "\n" + str(x) + "cm"
         	grove_rgb_lcd.setText_norefresh(difftext)
         	grove_rgb_lcd.setRGB(0,255,0)
         
-        	#x = grovepi.ultrasonicRead(PORT) # bottom
-            #y = grovepi.analogRead(pmeter) 
-
-        #bright = 255
-        #grovepi.analogWrite(lcd,bright)
-        #print(grovepi.ultrasonicRead(PORT)) #PORT
+        
