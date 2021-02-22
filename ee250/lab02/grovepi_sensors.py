@@ -27,9 +27,9 @@ import grove_rgb_lcd
 import string
 
 pmeter = 0
-lcd = 1
+#lcd = 1
 grovepi.pinMode(pmeter,"INPUT")
-grovepi.pinMode(lcd,"OUTPUT")
+#grovepi.pinMode(lcd,"OUTPUT")
 
 ultraRange = 4
 #lcd = 1
@@ -55,11 +55,17 @@ if __name__ == '__main__':
         #volt = round((float)(y) * adc_Ref / 1023, 2)
         #if x >= y:
         	#grove_rgb_lcd.setText_norefresh(str(y) + "cm    \n" + str(x) + "cm")
-        if x < y:
-        	grove_rgb_lcd.setText_norefresh(str(y) + "cm" + " OBJ PRES  \n" + str(x) + "cm")
-        else:
-        	grove_rgb_lcd.setText_norefresh(str(y) + "cm \n" + str(x) + "cm")
+        while(x < y):
+        	grove_rgb_lcd.setText_norefresh(str(y) + "cm OBJ PRES" +  "\n" + str(x) + "cm")
+        	setRGB(255,0,0)
+        	 x = grovepi.ultrasonicRead(PORT) # bottom
+        	 y = grovepi.analogRead(pmeter) 
+        while(x >= y):
+        	grove_rgb_lcd.setText_norefresh(str(y) + "cm         "+ "\n" + str(x) + "cm")
+        	setRGB(0,255,0)
+        	 x = grovepi.ultrasonicRead(PORT) # bottom
+             y = grovepi.analogRead(pmeter) 
 
-        bright = 255
-        grovepi.analogWrite(lcd,bright)
+        #bright = 255
+        #grovepi.analogWrite(lcd,bright)
         #print(grovepi.ultrasonicRead(PORT)) #PORT
