@@ -48,13 +48,13 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        x = grovepi.ultrasonicRead(ultraRange) # bottom
+        x = grovepi.ultrasonicRead(PORT) # bottom
         y = grovepi.analogRead(pmeter) # top
-        volt = round((float)(y) * adc_Ref / 1023, 2)
-        if x >= volt:
-        	grove_rgb_lcd.setText_norefresh(str(volt) + "cm    \n" + str(x) + "cm")
+        #volt = round((float)(y) * adc_Ref / 1023, 2)
+        if x >= y:
+        	grove_rgb_lcd.setText_norefresh(str(y) + "cm    \n" + str(x) + "cm")
         if x < volt:
-        	grove_rgb_lcd.setText_norefresh(str(volt) + "cm" +  "OBJ PRES  \n" + str(x) + "cm")
+        	grove_rgb_lcd.setText_norefresh(str(y) + "cm" + "OBJ PRES  \n" + str(x) + "cm")
 
 
         #print(grovepi.ultrasonicRead(PORT)) #PORT
