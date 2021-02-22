@@ -27,11 +27,12 @@ import grove_rgb_lcd
 import string
 
 pmeter = 0
+lcd = 1
 grovepi.pinMode(pmeter,"INPUT")
-grovepi.pinMode(led,"OUTPUT")
+grovepi.pinMode(lcd,"OUTPUT")
 
 ultraRange = 4
-
+#lcd = 1
 adc_Ref = 5
 grove_vcc = 5
 angle = 300
@@ -58,5 +59,5 @@ if __name__ == '__main__':
         	grove_rgb_lcd.setText_norefresh(str(y) + "cm" + "OBJ PRES  \n" + str(x) + "cm")
 
         bright = 255
-        grovepi.analogWrite(led,brightness)
+        grovepi.analogWrite(lcd,brightness)
         #print(grovepi.ultrasonicRead(PORT)) #PORT
