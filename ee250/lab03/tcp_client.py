@@ -6,7 +6,10 @@ Establish a socket connection -> send a short message -> get a message back -> t
 use python "input->" function, enter a line of a few letters, such as "abcd"
 """
 import socket
-
+import sys
+HOST = '52.137.113.211'
+PORT = 8080
+#My azureuser is sesay
 def main():
     
     # TODO: Create a socket and connect it to the server at the designated IP and port
@@ -14,6 +17,16 @@ def main():
     # TODO: Get user input and send it to the server using your TCP socket
     
     # TODO: Receive a response from the server and close the TCP connection
+
+
+	
+		with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+			s.connect((HOST, PORT))
+			user = input("Give an input: ")
+			s.sendall(user.encode())
+			data = s.recv(1024)
+
+		print('Received',repr(data))
 
 if __name__ == '__main__':
     main()
