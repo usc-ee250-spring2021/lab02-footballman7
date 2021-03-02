@@ -5,6 +5,8 @@ Write your socket client code here in python
 Establish a socket connection -> send a short message -> get a message back -> ternimate
 use python "input->" function, enter a line of a few letters, such as "abcd"
 """
+# Aaron Sesay
+"https://github.com/usc-ee250-spring2021/lab02-footballman7.git"
 import socket
 import sys
 HOST = '52.137.113.211'
